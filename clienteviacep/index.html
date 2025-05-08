@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta CEP</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-mask-plugin@1.14.13/dist/jquery.mask.min.js"></script>
+</head>
+
+<body>
+  <h1>Consulta CEP</h1>
+  <input type="text" id="cep" maxlength="9" placeholder="Insira um CEP">
+  <button id="consultar">Consultar</button>
+  <p id="informacoes"></p>
+
+  <script>
+    $(document).ready(function () {
+      $('#cep').mask('00000-000');
+
+      $("#consultar").on("click", function () {
+        var cep = $("#cep").val().replace("-", "");
+        var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+        $.ajax({
+          url: url,
+          method: "GET",
+          dataType: "json",
+          success: function (resposta) {
+            if (resposta.erro) {
+              $("#informacoes").html("CEP não encontrado.");
+            } else {
+              var valor_exibido = "Logradouro: " + resposta.logradouro +
+                "<br>Localidade: " + resposta.localidade +
+                "<br>UF: " + resposta.uf;
+
+              $("#informacoes").html(valor_exibido);
+            }
+          },
+          error: function () {
+            $("#informacoes").html("Erro ao consultar o CEP.");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
