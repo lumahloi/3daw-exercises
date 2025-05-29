@@ -1,0 +1,32 @@
+<!--
+Coloque como resposta da tarefa a URL para a página que você criou e o link do repositório
+da disciplina. P.ex.:
+
+http://mbelo.42web.io/termostato/index.html
+https://bitbucket.org/marciobelo/3daw/src/master/termostato/
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+  </head>
+  
+  <body>
+    <main>
+      <h1>Termostato</h1>
+      <section>
+        <div class="divFlex">
+          <input type="number" name="valor" id="valor" value="" placeholder="Insira um valor entre 0 e 70"/>
+          <button onClick="atualizar()">Atualizar</button>
+        </div>
+        <p id="atencao">Valor inválido!</p>
+        <div id="retangulo"></div>
+      </section>
+      <p id="eu">Feito por Lumah Loise, 3DAW 2025.1</p>
+    </main>
+    
+    <script src="script.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.output {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.linha {
+  margin-bottom: 4px;
+}
+
+.numero {
+  font-weight: bold;
+  color: #555;
+}
+
+.ping {
+  font-weight: bold;
+  color: #0077cc;
+}
+
+.pong {
+  font-style: italic;
+  color: #cc3300;
+}
+
+.ploc {
+  text-decoration: underline;
+  color: #009933;
+}
+
+.ok {
+  color: #888;
+}
